@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign in – Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="login-wrap">
+    <section class="login-side" aria-label="Library rules">
+      <h1>Return on time. Earn points.</h1>
+      <p>Borrow books, track due dates and see your rewards. Librarians manage the shelves, students and returns.</p>
+      <div class="slip">
+        <div class="slip-title">Date due</div>
+        <dl>
+          <div class="row"><dt>Loan period</dt><dd id="r-days">14 days</dd></div>
+          <div class="row"><dt>Books at a time</dt><dd id="r-max">3</dd></div>
+          <div class="row"><dt>Returned on time</dt><dd id="r-reward">+10 pts</dd></div>
+          <div class="row"><dt>Returned late</dt><dd id="r-fine">₹5 / day</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <main class="login-main">
+      <div class="login-card">
+        <h2>Sign in</h2>
+        <div class="seg" role="group" aria-label="Login type">
+          <button type="button" data-role="student" aria-pressed="true">Student</button>
+          <button type="button" data-role="librarian" aria-pressed="false">Librarian</button>
+        </div>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="username" required />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+          <p class="form-error" id="login-error" role="alert"></p>
+          <button class="btn primary" type="submit" style="width:100%">Sign in as student</button>
+        </form>
+
+        <div class="demo">
+          Demo accounts after <code>npm run seed</code>:<br />
+          Student <code>asha@student.com</code> / <code>student123</code><br />
+          Librarian <code>librarian@library.com</code> / <code>librarian123</code><br />
+          <span class="hint">New students are added by the librarian.</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/js/common.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

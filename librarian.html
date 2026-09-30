@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Librarian desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Library · Librarian desk</span>
+    <span class="who" id="who"></span>
+    <button class="btn small" id="logout">Sign out</button>
+  </header>
+
+  <div class="shell with-nav">
+    <nav class="sidenav" id="nav" aria-label="Sections">
+      <button data-tab="dashboard" aria-selected="true">Dashboard</button>
+      <button data-tab="books" aria-selected="false">Books</button>
+      <button data-tab="sections" aria-selected="false">Sections</button>
+      <button data-tab="students" aria-selected="false">Students</button>
+      <button data-tab="borrowals" aria-selected="false">Borrowals &amp; returns</button>
+      <button data-tab="activity" aria-selected="false">Activity log</button>
+    </nav>
+
+    <main>
+      <section id="tab-dashboard"></section>
+      <section id="tab-books" hidden></section>
+      <section id="tab-sections" hidden></section>
+      <section id="tab-students" hidden></section>
+      <section id="tab-borrowals" hidden></section>
+      <section id="tab-activity" hidden></section>
+    </main>
+  </div>
+
+  <div id="modal-root"></div>
+  <script src="/js/common.js"></script>
+  <script src="/js/librarian.js"></script>
+</body>
+</html>

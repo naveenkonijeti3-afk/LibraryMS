@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Library</span>
+    <span class="who" id="who"></span>
+    <span class="points" id="points" title="Reward points">0 points</span>
+    <button class="btn small" id="logout">Sign out</button>
+  </header>
+
+  <main class="shell">
+    <div class="summary" id="summary"></div>
+
+    <div class="tabs" role="tablist" id="tabs">
+      <button role="tab" data-tab="browse" aria-selected="true">Find books</button>
+      <button role="tab" data-tab="mine" aria-selected="false">My books</button>
+      <button role="tab" data-tab="notes" aria-selected="false">Notifications <span class="badge reward" id="note-count" hidden></span></button>
+    </div>
+
+    <section id="tab-browse">
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search by title, author or ISBN" aria-label="Search books" />
+        <select id="section-filter" aria-label="Filter by section"><option value="">All sections</option></select>
+      </div>
+      <div class="panel"><ul class="book-list" id="book-list"></ul></div>
+    </section>
+
+    <section id="tab-mine" hidden>
+      <div id="fine-notice"></div>
+      <h3>Currently borrowed</h3>
+      <div class="panel table-wrap" id="active-loans" style="margin-bottom:1.5rem"></div>
+      <h3>History</h3>
+      <div class="panel table-wrap" id="loan-history"></div>
+    </section>
+
+    <section id="tab-notes" hidden>
+      <div class="panel" id="notes"></div>
+    </section>
+  </main>
+
+  <div id="modal-root"></div>
+  <script src="/js/common.js"></script>
+  <script src="/js/student.js"></script>
+</body>
+</html>
